@@ -27,3 +27,9 @@ message MatchTaskRsp {
 	int32 code = 1;
 	string err = 2;
 }
+
+message PoolVersionMsg {
+	string gameId = 1; //游戏Id
+	int64 subType = 2; //匹配模式Id
+	int64 version = 3;
+}
