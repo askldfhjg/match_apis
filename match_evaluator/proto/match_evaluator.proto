@@ -8,17 +8,18 @@ service Match_evaluator {
 	rpc ToEval(ToEvalReq) returns (ToEvalRsp) {}
 }
 
-message matchDetail {
+message MatchDetail {
     repeated string ids = 1; // 组内详情
     int32 score = 2;         // 组的评分
+    string gameId = 3;
 }
 
 message ToEvalReq {
-    repeated matchDetail details = 1; // 成组结果
+    repeated MatchDetail details = 1; // 成组结果
     string taskId = 2;              // 任务ID
     string subTaskId = 3;           // 子任务ID
     string gameId = 4;              // 游戏ID
-    int64 poolId = 5;              // poolID
+    int64 subType = 5;              // poolID
     string evalGroupId = 6;         // 后置优化组的ID
     int64 evalGroupTaskCount = 7;   // 后置优化组内子任务数
     int64 evalGroupSubId = 8;       // 后置优化组内子任务ID
