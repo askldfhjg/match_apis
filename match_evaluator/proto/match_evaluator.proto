@@ -44,6 +44,7 @@ message ToEvalReq {
     int64 startTime = 10;
     int64 runTime = 11;
     int64 oldVersion = 12;
+    repeated string moveList = 13;
 }
 
 message ToEvalRsp {
